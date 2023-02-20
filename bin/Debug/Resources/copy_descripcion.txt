@@ -1,0 +1,59 @@
+.File.Copy Method
+.Lenguaje: C#
+.Namespace System.IO
+.Copia un archivo existente a un archivo nuevo.
+
+Copiar (cadena, cadena)¡¡
+Copia un archivo existente a un archivo nuevo. No se permite sobrescribir un archivo con el mismo nombre.
+
+public static void Copy (string sourceFileName, string destFileName);
+
+sourceFileName(string)--->El archivo a copiar.
+
+destFileName(string)--->El nombre del archivo de destino. Esto no puede ser un directorio o un archivo existente.
+
+Observaciones:
+
+Este método es equivalente a la sobrecarga del método Copy(String, String, Boolean)overwrite con el parámetro establecido en false.
+
+Los parámetros sourceFileNamey destFileNamepueden especificar información de ruta relativa o absoluta. La información de ruta relativa se interpreta como relativa al directorio de trabajo actual. Para obtener el directorio de trabajo actual, consulte el método Directory.GetCurrentDirectory . Este método no admite caracteres comodín en los parámetros.
+
+Los atributos del archivo original se conservan en el archivo copiado.
+
+Excepciones:
+
+Excepción de acceso no autorizado
+La persona que llama no tiene el permiso necesario.
+
+PathTooLongException
+La ruta especificada, el nombre de archivo o ambos superan la longitud máxima definida por el sistema.
+
+DirectoryNotFoundExceptionDirectoryNotFoundException
+La ruta especificada en sourceFileNameo destFileNameno es válida (por ejemplo, está en una unidad no asignada).
+
+Excepción de archivo no encontrado
+sourceFileNameno fue encontrado.
+
+IOException
+destFileNameexiste
+
+-o-
+
+Se ha producido un error de E/S.
+
+Copiar (cadena, cadena, booleano)¡¡
+Copia un archivo existente a un archivo nuevo. Se permite sobrescribir un archivo con el mismo nombre.
+
+sourceFileName(String)--->El archivo a copiar.
+
+destFileName(String)--->El nombre del archivo de destino. Esto no puede ser un directorio.
+
+Sobrescribir(booleano)--->true si el archivo de destino se puede sobrescribir; de lo contrario, false.
+
+OBSERVACIONES:
+
+Los parámetros sourceFileNamey destFileNamepueden especificar información de ruta relativa o absoluta. La información de ruta relativa se interpreta como relativa al directorio de trabajo actual. Este método no admite caracteres comodín en los parámetros.
+
+Los atributos del archivo original se conservan en el archivo copiado.
+
+Para obtener una lista de tareas de E/S comunes, consulte Tareas de E/S comunes .

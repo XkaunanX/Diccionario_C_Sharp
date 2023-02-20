@@ -1,0 +1,9 @@
+.String metodo
+.Lenguaje: C#
+.Convierte las minusculas en mayusculas
+
+Este método utiliza las reglas de mayúsculas y minúsculas de la referencia cultural actual para convertir cada carácter de la instancia actual a su equivalente en mayúsculas. Si un carácter no tiene un equivalente en mayúsculas, se incluye sin cambios en la cadena devuelta.
+
+El método ToUpper se usa a menudo para convertir una cadena a mayúsculas para que pueda usarse en una comparación que no distingue entre mayúsculas y minúsculas. Un mejor método para realizar una comparación sin distinción entre mayúsculas y minúsculas es llamar a un método de comparación de cadenas que tenga un parámetro StringComparison cuyo valor establezca en StringComparison.CurrentCultureIgnoreCase para una comparación que tenga en cuenta la referencia cultural y las mayúsculas y minúsculas.
+
+La operación de mayúsculas y minúsculas que resulta de llamar al método ToUpper() tiene en cuenta las convenciones de mayúsculas y minúsculas de la referencia cultural actual. Si necesita la versión en minúsculas o mayúsculas de un identificador de sistema operativo, como un nombre de archivo, una canalización con nombre o una clave de registro, use el método ToLowerInvariant o ToUpperInvariant . Esto produce el mismo resultado en todas las culturas (a diferencia del método ToUpper() ) y funciona de manera más eficiente.

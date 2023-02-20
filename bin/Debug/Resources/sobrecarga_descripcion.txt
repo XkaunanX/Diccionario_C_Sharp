@@ -1,0 +1,53 @@
+.Sobrecarga de Funciones
+.Lenguaje: C#
+.Utilizar el mismo codigo para obtener distintos resultados
+
+Con la sobrecarga de métodos, varios métodos pueden tener el mismo nombre con diferentes parámetros:
+
+int MyMethod(int x)
+float MyMethod(float x)
+double MyMethod(double x, double y)
+
+Considere el siguiente ejemplo, que tiene dos métodos que suman números de diferente tipo:
+
+static int PlusMethodInt(int x, int y)
+{
+  return x + y;
+}
+
+static double PlusMethodDouble(double x, double y)
+{
+  return x + y;
+}
+
+static void Main(string[] args)
+{
+  int myNum1 = PlusMethodInt(8, 5);
+  double myNum2 = PlusMethodDouble(4.3, 6.26);
+  Console.WriteLine("Int: " + myNum1);
+  Console.WriteLine("Double: " + myNum2);
+}
+
+n lugar de definir dos métodos que deberían hacer lo mismo, es mejor sobrecargar uno.
+
+En el siguiente ejemplo, sobrecargamos el PlusMethod método para que funcione con ambos int y double:
+
+static int PlusMethod(int x, int y)
+{
+  return x + y;
+}
+
+static double PlusMethod(double x, double y)
+{
+  return x + y;
+}
+
+static void Main(string[] args)
+{
+  int myNum1 = PlusMethod(8, 5);
+  double myNum2 = PlusMethod(4.3, 6.26);
+  Console.WriteLine("Int: " + myNum1);
+  Console.WriteLine("Double: " + myNum2);
+}
+
+varios métodos pueden tener el mismo nombre siempre que el número y/o el tipo de parámetros sean diferentes.

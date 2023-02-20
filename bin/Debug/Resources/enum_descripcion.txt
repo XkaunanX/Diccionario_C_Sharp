@@ -1,0 +1,120 @@
+.C# Enums
+.Lenguaje: C#
+.enumes una "clase" especial que representa un grupo de constantes (variables inalterables/de solo lectura).
+
+Para crear un enum, use la enumpalabra clave (en lugar de clase o interfaz) y separe los elementos de enumeración con una coma:
+
+enum Level 
+{
+  Low,
+  Medium,
+  High
+}
+
+Puede acceder enuma elementos con la sintaxis de punto :
+
+Level myVar = Level.Medium;
+
+Console.WriteLine(myVar);
+
+Enum es la abreviatura de "enumeraciones", que significa "listado específicamente".
+
+Enum dentro de una clase
+También puedes tener un enumdentro de una clase:
+
+class Program
+{
+  enum Level
+  {
+    Low,
+    Medium,
+    High
+  }
+  static void Main(string[] args)
+  {
+    Level myVar = Level.Medium;
+    Console.WriteLine(myVar);
+  }
+}
+
+SALIDA = Medium
+
+Valores de enumeración
+De forma predeterminada, el primer elemento de una enumeración tiene el valor 0. El segundo tiene el valor 1, y así sucesivamente.
+
+Para obtener el valor entero de un elemento, debe convertir explícitamente el elemento en un int:
+
+enum Months
+{
+  January,    // 0
+  February,   // 1
+  March,      // 2
+  April,      // 3
+  May,        // 4
+  June,       // 5
+  July        // 6
+}
+
+static void Main(string[] args)
+{
+  int myNum = (int) Months.April;
+  Console.WriteLine(myNum);
+}
+La salida será = 3
+
+También puede asignar sus propios valores de enumeración, y los siguientes elementos actualizarán el número en consecuencia:
+
+Ejemplo
+enum Months
+{
+  January,    // 0
+  February,   // 1
+  March=6,    // 6
+  April,      // 7
+  May,        // 8
+  June,       // 9
+  July        // 10
+}
+
+static void Main(string[] args)
+{
+  int myNum = (int) Months.April;
+  Console.WriteLine(myNum);
+}
+La salida será:
+
+7
+
+Enumeración en una instrucción Switch
+Las enumeraciones se usan a menudo en switch declaraciones para verificar los valores correspondientes:
+
+Ejemplo
+enum Level 
+{
+  Low,
+  Medium,
+  High
+}
+
+static void Main(string[] args) 
+{
+  Level myVar = Level.Medium;
+  switch(myVar) 
+  {
+    case Level.Low:
+      Console.WriteLine("Low level");
+      break;
+    case Level.Medium:
+       Console.WriteLine("Medium level");
+      break;
+    case Level.High:
+      Console.WriteLine("High level");
+      break;
+  }
+}
+La salida será:
+
+Medium level
+
+¿Por qué y cuándo usar enumeraciones?
+Use enumeraciones cuando tenga valores que sepa que no van a cambiar, como meses, días, colores, baraja de cartas, etc.

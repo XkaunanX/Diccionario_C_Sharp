@@ -1,0 +1,85 @@
+.método especial(Constructor)
+.Lenguaje: C#
+.Un constructor es un método especial que se utiliza para inicializar objetos. La ventaja de un constructor es que se llama cuando se crea un objeto de una clase. Se puede utilizar para establecer valores iniciales para los campos:
+
+// Create a Car class
+class Car
+{
+  public string model;  // Create a field
+
+  // Create a class constructor for the Car class
+  public Car()
+  {
+    model = "Mustang"; // Set the initial value for model
+  }
+
+  static void Main(string[] args)
+  {
+    Car Ford = new Car();  // Create an object of the Car Class (this will call the constructor)
+    Console.WriteLine(Ford.model);  // Print the value of model
+  }
+}
+// Outputs "Mustang"
+
+Tenga en cuenta que el nombre del constructor debe coincidir con el nombre de la clase y no puede tener un tipo de retorno (como voido int).
+
+También tenga en cuenta que se llama al constructor cuando se crea el objeto.
+
+Todas las clases tienen constructores de forma predeterminada: si no crea un constructor de clase usted mismo, C# crea uno para usted. Sin embargo, no podrá establecer valores iniciales para los campos.
+
+¡Los constructores ahorran tiempo!
+
+Parámetros del constructor
+Los constructores también pueden tomar parámetros, que se utilizan para inicializar campos.
+
+El siguiente ejemplo agrega un string model Name parámetro al constructor. Dentro del constructor establecemos model( modelName) model = model Name. Cuando llamamos al constructor, le pasamos un parámetro al constructor ( "Mustang"), que establecerá el valor de model a "Mustang":
+
+class Car
+{
+  public string model;
+
+  // Create a class constructor with a parameter
+  public Car(string modelName)
+  {
+    model = modelName;
+  }
+
+  static void Main(string[] args)
+  {
+    Car Ford = new Car("Mustang");
+    Console.WriteLine(Ford.model);
+  }
+}
+
+// Outputs "Mustang"
+
+Puedes tener tantos parámetros como quieras:
+
+class Car
+{
+  public string model;
+  public string color;
+  public int year;
+
+  // Create a class constructor with multiple parameters
+  public Car(string modelName, string modelColor, int modelYear)
+  {
+    model = modelName;
+    color = modelColor;
+    year = modelYear;
+  }
+
+  static void Main(string[] args)
+  {
+    Car Ford = new Car("Mustang", "Red", 1969);
+    Console.WriteLine(Ford.color + " " + Ford.year + " " + Ford.model);
+  }
+}
+
+// Outputs Red 1969 Mustang
+
+Sugerencia: al igual que otros métodos, los constructores se pueden sobrecargar utilizando diferentes números de parámetros.
+
+Los constructores ahorran tiempo
+Cuando considere el ejemplo del capítulo anterior, notará que los constructores son muy útiles, ya que ayudan a reducir la cantidad de código.
+

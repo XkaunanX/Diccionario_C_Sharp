@@ -1,0 +1,22 @@
+.Metodo String
+.Lenguaje: C#
+.Junta por lo menos 2 cadenas string en una sola.
+
+La concatenación es el proceso de agregar una cadena al final de otra cadena. Concatenas cadenas usando el +operador. Para los literales de cadena y las constantes de cadena, la concatenación ocurre en tiempo de compilación; no se produce ninguna concatenación en tiempo de ejecución. Para las variables de cadena, la concatenación se produce solo en tiempo de ejecución.
+
+Para concatenar variables de cadena, puede usar los operadores +o , la interpolación de cadenas o los métodos String.Format , String.Concat , String.Join o StringBuilder.Append . El operador es fácil de usar y permite un código intuitivo. Incluso si usa varios operadores en una declaración, el contenido de la cadena se copia solo una vez.
+
+En algunas expresiones, es más fácil concatenar cadenas mediante la interpolación de cadenas.
+A partir de C# 10, puede usar la interpolación de cadenas para inicializar una cadena constante cuando todas las expresiones que se usan para los marcadores de posición también son cadenas constantes.
+
+Otro método para concatenar cadenas es String.Format . Este método funciona bien cuando crea una cadena a partir de una pequeña cantidad de cadenas de componentes.
+
+En otros casos, puede estar combinando cadenas en un bucle en el que no sabe cuántas cadenas de origen está combinando y el número real de cadenas de origen puede ser grande. La clase StringBuilder se diseñó para estos escenarios.
+
+Otra opción para unir cadenas de una colección es usar el método String.Concat . Use el método String.Join si las cadenas de origen deben estar separadas por un delimitador.
+
+Por fin, puede usar LINQ y el método Enumerable.Agregate para unir cadenas de una colección. Este método combina las cadenas de origen mediante una expresión lambda. La expresión lambda hace el trabajo de agregar cada cadena a la acumulación existente. 
+
+
+
+

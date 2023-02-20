@@ -1,0 +1,18 @@
+.Valor Para Excepciones
+.Lenguaje: C#
+.Crea un caso en caso que ninguno se cumpla
+
+La default palabra clave es opcional y especifica algún código para ejecutar si no hay coincidencia.
+
+switch(expression) 
+{
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+    break;
+}

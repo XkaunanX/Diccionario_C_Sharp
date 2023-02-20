@@ -1,0 +1,36 @@
+.Metodo String
+.Lenguaje: C#
+.Devuelve una cadena que elimina lo especificado en la cadena de referencia.
+
+Devuelve una nueva cadena en la que se eliminan todas las ocurrencias iniciales y finales de un conjunto de caracteres especificados de la cadena actual.
+
+Trim()
+La cadena que queda después de eliminar todos los espacios en blanco del principio y el final de la cadena actual. Si no se pueden recortar caracteres de la instancia actual, el método devuelve la instancia actual sin cambios.
+
+OBSERVACIONES
+El Trimmétodo elimina de la cadena actual todos los espacios en blanco iniciales y finales. Cada operación de recorte inicial y final se detiene cuando se encuentra un carácter que no es un espacio en blanco. Por ejemplo, si la cadena actual es " abc xyz ", el Trimmétodo devuelve "abc xyz". Para eliminar los espacios en blanco entre las palabras de una cadena, utilice las expresiones regulares de .NET .
+
+Si la cadena actual es igual a Empty o todos los caracteres de la instancia actual consisten en espacios en blanco, el método devuelve Empty .
+
+Los caracteres de espacio en blanco están definidos por el estándar Unicode. El Trimmétodo elimina los caracteres iniciales y finales que generan un valor de retorno truecuando se pasan al método Char.IsWhiteSpace .
+
+Trim(Char[])
+Elimina todas las ocurrencias iniciales y finales de un conjunto de caracteres especificado en una matriz de la cadena actual.
+
+La cadena que queda después de que todas las apariciones de los caracteres en el trimCharsparámetro se eliminen del principio y el final de la cadena actual. Si trimCharses nullo una matriz vacía, en su lugar se eliminan los espacios en blanco. Si no se pueden recortar caracteres de la instancia actual, el método devuelve la instancia actual sin cambios.
+
+OBSERVACIONES
+El Trim(System.Char[])método elimina de la cadena actual todos los caracteres iniciales y finales que se encuentran en el trimCharsparámetro. Cada operación de recorte inicial y final se detiene cuando trimCharsse encuentra un carácter que no está. Por ejemplo, si la cadena actual es "123abc456xyz789" y trimCharscontiene los dígitos del "1" al "9", el Trim(System.Char[])método devuelve "abc456xyz".
+
+Si la cadena actual es igual a Empty o todos los caracteres de la instancia actual consisten en caracteres de la trimCharsmatriz, el método devuelve Empty .
+
+Si trimCharses nullo una matriz vacía, este método elimina los caracteres iniciales o finales que hacen que el método regrese truecuando se pasan al método Char.IsWhiteSpace .
+
+Trim(Char)
+Elimina todas las instancias iniciales y finales de un carácter de la cadena actual.
+
+La cadena que queda después de eliminar todas las instancias del trimCharcarácter del principio y el final de la cadena actual. Si no se pueden recortar caracteres de la instancia actual, el método devuelve la instancia actual sin cambios.
+
+OBSERVACIONES
+El Trim(System.Char)método elimina de la cadena actual todas las instancias iniciales y finales del trimCharcarácter. Cada operación de recorte inicial y final se detiene cuando trimCharse encuentra un carácter diferente. Por ejemplo, si trimChares -y la cadena actual es "---abc---xyz----", el Trim(System.Char)método devuelve "abc---xyz". Para quitar caracteres entre palabras en una cadena, use Expresiones regulares de .NET .
+

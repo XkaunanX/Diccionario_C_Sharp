@@ -1,0 +1,15 @@
+.Declara una variable que no cambia durante la ejecucion del programa
+.Lenguaje: C#
+
+Utiliza la constpalabra clave para declarar un campo constante o un local constante. Los campos constantes y los locales no son variables y no se pueden modificar. Las constantes pueden ser números, valores booleanos, cadenas o una referencia nula. No cree una constante para representar información que espera cambiar en cualquier momento. Por ejemplo, no utilice un campo constante para almacenar el precio de un servicio, el número de versión de un producto o la marca de una empresa. Estos valores pueden cambiar con el tiempo y, debido a que los compiladores propagan constantes, será necesario volver a compilar otro código compilado con sus bibliotecas para ver los cambios.
+El tipo de una declaración constante especifica el tipo de los miembros que introduce la declaración. El inicializador de una constante local o un campo constante debe ser una expresión constante que se pueda convertir implícitamente al tipo de destino.
+
+Una expresión constante es una expresión que se puede evaluar completamente en tiempo de compilación. Por lo tanto, los únicos valores posibles para constantes de tipos de referencia son stringy una referencia nula.
+
+La declaración constante puede declarar múltiples constantes.
+
+El staticmodificador no está permitido en una declaración constante.
+
+Una constante puede participar en una expresión constante.
+
+La palabra clave de solo lectura difiere de la constpalabra clave. Un const campo solo se puede inicializar en la declaración del campo. Un readonlycampo se puede inicializar en la declaración o en un constructor. Por lo tanto, readonlylos campos pueden tener diferentes valores según el constructor utilizado. Además, aunque un constcampo es una constante de tiempo de compilación, el readonlycampo se puede usar para constantes de tiempo de ejecución, como en esta línea:public static readonly uint l1 = (uint)DateTime.Now.Ticks;

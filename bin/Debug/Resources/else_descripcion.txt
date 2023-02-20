@@ -1,0 +1,18 @@
+.Instrucciones de selección
+.Lenguaje: C#
+.Selecciona una instrucción para ejecutarla en función del valor de una expresión booleana.
+.Utilice la else instrucción para especificar un bloque de código que se ejecutará si la condición es False.
+
+Una instrucción if con una parte ELSE selecciona una de las dos instrucciones que se ejecutarán en función del valor de una expresión booleana.
+
+*Si no se cumple la condición: se pasa a la siguiente condición, así hasta cumplir alguna o finalizar la instrucción If.
+
+CONDICIONES
+
+Less than: a < b
+Less than or equal to: a <= b
+Greater than: a > b
+Greater than or equal to: a >= b
+Equal to a == b
+Not Equal to: a != b
+

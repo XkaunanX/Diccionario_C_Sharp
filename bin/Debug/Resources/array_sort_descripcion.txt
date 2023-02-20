@@ -1,0 +1,46 @@
+.Ordenar Array
+.Lenguaje: C#
+.Ordena una matriz alfabéticamente o en orden ascendente
+
+¡STRING!
+string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+Array.Sort(cars);
+foreach (string i in cars)
+{
+  Console.WriteLine(i);
+}
+
+¡INT!
+// Sort an int
+int[] myNumbers = {5, 1, 8, 9};
+Array.Sort(myNumbers);
+foreach (int i in myNumbers)
+{
+  Console.WriteLine(i);
+}
+
+Ordena un rango de elementos en un par de objetos Array unidimensionales (uno contiene las claves y el otro contiene los elementos correspondientes) según las claves en el primer Array usando el IComparer especificado .
+
+OBSERVACIONES
+
+Cada clave en el keys Array tiene un elemento correspondiente en el items Array . Cuando se reposiciona una clave durante la clasificación, el elemento correspondiente en el items Array se reposiciona de manera similar. Por lo tanto, el items Array se ordena de acuerdo con la disposición de las claves correspondientes en el keys Array .
+
+Si compareres null, cada clave dentro del rango especificado de elementos en el keys Array debe implementar la interfaz IComparable para poder realizar comparaciones con todas las demás claves.
+
+Puede ordenar si hay más elementos que claves, pero los elementos que no tienen claves correspondientes no se clasificarán. No puede ordenar si hay más claves que elementos; hacer esto arroja una ArgumentException .
+
+Si la ordenación no se completa con éxito, los resultados no están definidos.
+
+También puede admitir comparaciones personalizadas proporcionando una instancia de su propia implementación de IComparer al comparerparámetro. El ejemplo hace esto definiendo una implementación personalizada de IComparer que invierte el orden de clasificación predeterminado y realiza una comparación de cadenas que no distingue entre mayúsculas y minúsculas.
+
+Este método utiliza el algoritmo de clasificación introspectiva ( introsort ) de la siguiente manera:
+
+Si el tamaño de la partición es menor o igual a 16 elementos, utiliza un algoritmo de ordenación por inserción .
+
+Si el número de particiones supera 2 * Log N , donde N es el rango de la matriz de entrada, utiliza un algoritmo Heapsort .
+
+De lo contrario, utiliza un algoritmo Quicksort .
+
+Esta implementación realiza una ordenación inestable; es decir, si dos elementos son iguales, es posible que no se conserve su orden. Por el contrario, una ordenación estable conserva el orden de los elementos que son iguales.
+
+Este método es una operación O( nlog n), donde nes length.

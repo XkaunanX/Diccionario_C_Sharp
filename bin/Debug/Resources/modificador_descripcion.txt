@@ -1,0 +1,80 @@
+.Modificador de Acceso
+.Lenguaje: C#
+.se utiliza para establecer el nivel de acceso/visibilidad para clases, campos, métodos y propiedades.
+
+C# tiene los siguientes modificadores de acceso:
+
+Modifier	Description
+
+public:		accesible a todos
+private:		solo accesible a su misma clase
+protected:	Se puede acceder al código dentro de la misma clase, o en una clase que se hereda de esa clase.
+internal:	Solo se puede acceder al código dentro de su propio ensamblado, pero no desde otro ensamblado. Aprenderá más sobre esto en un capítulo posterior.
+
+También hay dos combinaciones: protected internaly private protected.
+
+Modificador privado
+Si declara un campo con un privatemodificador de acceso, solo se puede acceder dentro de la misma clase:
+
+class Car{  
+
+private string model = "Mustang";
+
+}
+  
+  static void Main(string[] args){
+  
+    Car myObj = new Car();
+    Console.WriteLine(myObj.model);
+}
+
+Si intenta acceder fuera de la clase, se producirá un error:
+
+class Car
+{
+  private string model = "Mustang";
+}
+
+class Program
+{
+  static void Main(string[] args)
+  {
+    Car myObj = new Car();
+    Console.WriteLine(myObj.model);
+  }
+}
+
+LA SALIDA SERA:
+'Car.model' is inaccessible due to its protection level
+The field 'Car.model' is assigned but its value is never used
+
+Modificador público
+Si declara un campo con un publicmodificador de acceso, es accesible para todas las clases:
+
+class Car
+{
+  public string model = "Mustang";
+}
+
+class Program
+{
+  static void Main(string[] args)
+  {
+    Car myObj = new Car();
+    Console.WriteLine(myObj.model);
+  }
+}
+
+¿Por qué acceder a los modificadores?
+Para controlar la visibilidad de los miembros de la clase (el nivel de seguridad de cada clase individual y miembro de la clase).
+
+Para lograr la " encapsulación ", que es el proceso de asegurarse de que los datos "confidenciales" estén ocultos para los usuarios. Esto se hace declarando los campos como private.
+
+Nota: De forma predeterminada, todos los miembros de una clase son private, si no especifica un modificador de acceso:
+
+class Car
+{
+  string model;  // private
+  string year;   // private
+}
+

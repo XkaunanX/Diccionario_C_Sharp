@@ -1,0 +1,20 @@
+.Events
+.Lenguaje: C#
+.Los eventos permiten que una clase u objeto notifique a otras clases u objetos cuando ocurre algo de interés. La clase que envía (o genera ) el evento se denomina editor y las clases que reciben (o manejan ) el evento se denominan suscriptores .
+
+En una aplicación web o Windows Forms de C# típica, se suscribe a eventos generados por controles como botones y cuadros de lista. Puede usar el entorno de desarrollo integrado (IDE) de Visual C# para explorar los eventos que publica un control y seleccionar los que desea controlar. El IDE proporciona una manera fácil de agregar automáticamente un método de controlador de eventos vacío y el código para suscribirse al evento.
+
+Resumen de eventos
+Los eventos tienen las siguientes propiedades:
+
+.El editor determina cuándo se genera un evento; los suscriptores determinan qué acción se toma en respuesta al evento.
+
+.Un evento puede tener múltiples suscriptores. Un suscriptor puede gestionar varios eventos de varios editores.
+
+.Los eventos que no tienen suscriptores nunca se activan.
+
+.Los eventos generalmente se usan para señalar acciones del usuario, como clics en botones o selecciones de menú en interfaces gráficas de usuario.
+
+.Cuando un evento tiene varios suscriptores, los controladores de eventos se invocan sincrónicamente cuando se genera un evento. Para invocar eventos de forma asíncrona, consulte Llamar a métodos síncronos de forma asíncrona .
+
+.En la biblioteca de clases de .NET, los eventos se basan en el delegado EventHandler y la clase base EventArgs .

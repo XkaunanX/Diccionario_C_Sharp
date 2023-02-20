@@ -1,0 +1,120 @@
+.File.WriteAllText Method
+.Lenguaje: C#
+.Namespace System.IO
+.Crea un nuevo archivo, escribe el contenido en el archivo y luego cierra el archivo. Si el archivo de destino ya existe, se sobrescribe.
+
+WriteAllText(Cadena, Cadena)
+Crea un nuevo archivo, escribe la cadena especificada en el archivo y luego cierra el archivo. Si el archivo de destino ya existe, se sobrescribe.
+
+public static void WriteAllText (string path, string? contents);
+
+Parámetros
+sendero
+Cuerda
+El archivo a escribir.
+
+contenido
+Cuerda
+La cadena para escribir en el archivo.
+
+Observaciones
+Este método usa la codificación UTF-8 sin una marca de orden de bytes (BOM), por lo que usar el método GetPreamble devolverá una matriz de bytes vacía. Si es necesario incluir un identificador UTF-8, como una marca de orden de bytes, al principio de un archivo, utilice la sobrecarga del método WriteAllText(String, String, Encoding) con codificación UTF8 .
+
+Dada una cadena y una ruta de archivo, este método abre el archivo especificado, escribe la cadena en el archivo y luego cierra el archivo.
+
+Se aplica a
+.NET 7 Preview 5 y otras versiones
+
+Ejemplos
+El siguiente ejemplo de código demuestra el uso del método WriteAllText para escribir texto en un archivo. En este ejemplo, se crea un archivo, si aún no existe, y se le agrega texto.
+
+C#
+
+using System;
+using System.IO;
+using System.Text;
+
+class Test
+{
+    public static void Main()
+    {
+        string path = @"c:\temp\MyTest.txt";
+
+        // This text is added only once to the file.
+        if (!File.Exists(path))
+        {
+            // Create a file to write to.
+            string createText = "Hello and Welcome" + Environment.NewLine;
+            File.WriteAllText(path, createText);
+        }
+
+        // This text is always added, making the file longer over time
+        // if it is not deleted.
+        string appendText = "This is extra text" + Environment.NewLine;
+        File.AppendAllText(path, appendText);
+
+        // Open the file to read from.
+        string readText = File.ReadAllText(path);
+        Console.WriteLine(readText);
+    }
+}
+
+WriteAllText(String, String, Encoding)
+
+Crea un nuevo archivo, escribe la cadena especificada en el archivo usando la codificación especificada y luego cierra el archivo. Si el archivo de destino ya existe, se sobrescribe.
+
+public static void WriteAllText (string path, string? contents, System.Text.Encoding encoding);
+
+Parámetros
+sendero
+Cuerda
+El archivo a escribir.
+
+contenido
+Cuerda
+La cadena para escribir en el archivo.
+
+codificación
+Codificación
+La codificación que se aplicará a la cadena.
+
+Observaciones
+Dada una cadena y una ruta de archivo, este método abre el archivo especificado, escribe la cadena en el archivo usando la codificación especificada y luego cierra el archivo. Se garantiza que el identificador de archivo se cerrará con este método, incluso si se generan excepciones.
+
+Se aplica a
+.NET 7 Preview 5 y otras versiones
+
+Ejemplos
+El siguiente ejemplo de código demuestra el uso del método WriteAllText para escribir texto en un archivo. En este ejemplo, se crea un archivo, si aún no existe, y se le agrega texto.
+
+C#
+
+Copiar
+using System;
+using System.IO;
+using System.Text;
+
+class Test
+{
+    public static void Main()
+    {
+        string path = @"c:\temp\MyTest.txt";
+
+        // This text is added only once to the file.
+        if (!File.Exists(path))
+        {
+            // Create a file to write to.
+            string createText = "Hello and Welcome" + Environment.NewLine;
+            File.WriteAllText(path, createText, Encoding.UTF8);
+        }
+
+        // This text is always added, making the file longer over time
+        // if it is not deleted.
+        string appendText = "This is extra text" + Environment.NewLine;
+        File.AppendAllText(path, appendText, Encoding.UTF8);
+
+        // Open the file to read from.
+        string readText = File.ReadAllText(path);
+        Console.WriteLine(readText);
+    }
+}

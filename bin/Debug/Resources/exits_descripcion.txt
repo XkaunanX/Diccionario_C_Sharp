@@ -1,0 +1,44 @@
+.File.Exists(String) Method
+.Lenguaje: C#
+.Namespace System.IO
+.Determina si el archivo especificado existe.
+
+public static bool Exists (string? path);
+
+Parámetros
+sendero
+Cuerda
+El archivo a revisar.
+
+Devoluciones
+booleano
+true si la persona que llama tiene los permisos necesarios y pathcontiene el nombre de un archivo existente; de lo contrario, false. Este método también devuelve falsesi pathes null, una ruta no válida o una cadena de longitud cero. Si la persona que llama no tiene permisos suficientes para leer el archivo especificado, no se lanza ninguna excepción y el método regresa falseindependientemente de la existencia de path.
+
+Observaciones
+El método Exists no debe usarse para la validación de rutas, este método simplemente verifica si el archivo especificado en pathexiste. Pasar una ruta no válida a Exists devuelve false. Para verificar si la ruta contiene caracteres no válidos, puede llamar al método GetInvalidPathChars para recuperar los caracteres que no son válidos para el sistema de archivos. También puede crear una expresión regular para probar si la ruta es válida para su entorno. Para ver ejemplos de rutas aceptables, consulte Archivo .
+
+Para verificar si existe un directorio, consulte Directory.Exists .
+
+Tenga en cuenta que otro proceso puede potencialmente hacer algo con el archivo entre el momento en que llama al método Exists y realiza otra operación en el archivo, como Delete .
+
+Se pathpermite que el parámetro especifique información de ruta relativa o absoluta. La información de ruta relativa se interpreta como relativa al directorio de trabajo actual. Para obtener el directorio de trabajo actual, consulte GetCurrentDirectory .
+
+Si pathdescribe un directorio, este método devuelve false. Los espacios finales se eliminan del pathparámetro antes de determinar si el archivo existe.
+
+El método Exists devuelve falsesi se produce algún error al intentar determinar si existe el archivo especificado. Esto puede ocurrir en situaciones que generan excepciones, como pasar un nombre de archivo con caracteres no válidos o demasiados caracteres, un disco defectuoso o faltante, o si la persona que llama no tiene permiso para leer el archivo.
+
+Ejemplos
+El siguiente ejemplo determina si existe un archivo.
+
+C#
+string curFile = @"c:\temp\test.txt";
+Console.WriteLine(File.Exists(curFile) ? "File exists." : "File does not exist.");
+
+Se aplica a
+Producto	Versiones
+.RED		Núcleo 1.0, Núcleo 1.1, Núcleo 2.0, Núcleo 2.1, Núcleo 2.2, Núcleo 3.0, Núcleo 3.1, 5, 6, 7 Vista previa 5
+.NET Framework	1.1, 2.0, 3.0, 3.5, 4.0, 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8
+Estándar .NET	1.3, 1.4, 1.6, 2.0, 2.1
+UWP	10.0
+Xamarin.iOS	10.8
+Xamarin.Mac	3.0

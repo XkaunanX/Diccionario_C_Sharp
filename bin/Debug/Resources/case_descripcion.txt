@@ -1,0 +1,18 @@
+.El valor de la expresión se compara con los valores de cada case
+.Lenguaje: C#
+.Ejecuta en caso de coincidencia
+
+Comprueba Si lo que se esta evaluando cumple con el caso, si lo cumple ejecuta el codigo de su interior, si no es el caso, pasa al siguiente case.
+
+switch(expression) 
+{
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+    break;
+}

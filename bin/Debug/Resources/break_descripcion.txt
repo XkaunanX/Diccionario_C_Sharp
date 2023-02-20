@@ -1,0 +1,26 @@
+.Salida de lista de instrucciones
+.Lenguaje: C#
+.Sale del switch si comprobar los siguientes casos
+
+Cuando C# llega a una break palabra clave, sale del bloque de cambio.
+
+Esto detendrá la ejecución de más código y pruebas de casos dentro del bloque.
+
+Cuando se encuentra una coincidencia y el trabajo está hecho, es hora de un descanso. No hay necesidad de más pruebas.
+
+Una interrupción puede ahorrar mucho tiempo de ejecución porque "ignora" la ejecución de todo el resto del código en el bloque de cambio.
+
+int day = 4;
+switch (day) 
+{
+  case 6:
+    Console.WriteLine("Today is Saturday.");
+    break;
+  case 7:
+    Console.WriteLine("Today is Sunday.");
+    break;
+  default:
+    Console.WriteLine("Looking forward to the Weekend.");
+    break;
+}
+

@@ -1,0 +1,23 @@
+.Tipo de Dato
+.Lenguaje: C#
+.Representa un carácter Unicode UTF-16.
+
+El valor por defecto del chartipo es \0, es decir, U+0000.
+
+El chartipo admite operadores de comparación , igualdad , incremento y decremento . Además, para los charoperandos, los operadores lógicos aritméticos y bit a bit realizan una operación en los códigos de caracteres correspondientes y producen el resultado del tipo.int
+
+El tipo de cadena representa el texto como una secuencia de charvalores.
+
+Puede especificar un charvalor con:
+
+un carácter literal.
+una secuencia de escape Unicode, \u seguida de la representación hexadecimal de cuatro símbolos de un código de carácter.
+una secuencia de escape hexadecimal, \x seguida de la representación hexadecimal de un código de carácter.
+
+En el caso de una secuencia de escape Unicode, debe especificar los cuatro dígitos hexadecimales. Es decir, \u006Aes una secuencia de escape válida, mientras que \u06Ay \u6Ano lo son.
+
+En el caso de una secuencia de escape hexadecimal, puede omitir los ceros iniciales. Es decir, las secuencias \x006Ade escape \x06A, y \x6Ason válidas y corresponden al mismo carácter.
+
+El chartipo es implícitamente convertible a los siguientes tipos enterosushort : , int, uint, longy ulong. También es implícitamente convertible a los tipos numéricos de punto flotantefloat integrados: , doubley decimal. Es explícitamente convertible a tipos sbyte, bytee shortintegrales.
+
+No hay conversiones implícitas de otros tipos al chartipo. Sin embargo, cualquier tipo numérico integral o de punto flotante se puede convertir explícitamente a char.

@@ -1,0 +1,12 @@
+C:\Users\damian\source\repos\Diccionario_C_sharp\Diccionario_C_sharp\bin\Debug\Diccionario_C_sharp.exe.config
+C:\Users\damian\source\repos\Diccionario_C_sharp\Diccionario_C_sharp\bin\Debug\Diccionario_C_sharp.exe
+C:\Users\damian\source\repos\Diccionario_C_sharp\Diccionario_C_sharp\bin\Debug\Diccionario_C_sharp.pdb
+C:\Users\damian\source\repos\Diccionario_C_sharp\Diccionario_C_sharp\obj\Debug\Diccionario_C_sharp.csproj.AssemblyReference.cache
+C:\Users\damian\source\repos\Diccionario_C_sharp\Diccionario_C_sharp\obj\Debug\Diccionario_C_sharp.form1.resources
+C:\Users\damian\source\repos\Diccionario_C_sharp\Diccionario_C_sharp\obj\Debug\Diccionario_C_sharp.Properties.Resources.resources
+C:\Users\damian\source\repos\Diccionario_C_sharp\Diccionario_C_sharp\obj\Debug\Diccionario_C_sharp.csproj.GenerateResource.cache
+C:\Users\damian\source\repos\Diccionario_C_sharp\Diccionario_C_sharp\obj\Debug\Diccionario_C_sharp.csproj.CoreCompileInputs.cache
+C:\Users\damian\source\repos\Diccionario_C_sharp\Diccionario_C_sharp\obj\Debug\Diccionario_C_sharp.exe
+C:\Users\damian\source\repos\Diccionario_C_sharp\Diccionario_C_sharp\obj\Debug\Diccionario_C_sharp.pdb
+C:\Users\damian\source\repos\Diccionario_C_sharp\Diccionario_C_sharp\obj\Debug\Diccionario_C_sharp.Form2.resources
+C:\Users\damian\source\repos\Diccionario_C_sharp\Diccionario_C_sharp\obj\Debug\Diccionario_C_sharp.Form3.resources

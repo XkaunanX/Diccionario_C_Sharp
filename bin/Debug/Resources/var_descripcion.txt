@@ -1,0 +1,10 @@
+.Declaracion de tipo de dato implicito
+.Lenguaje: C#3
+.implicito
+
+A partir de C# 3, las variables que se declaran en el ámbito del método pueden tener un "tipo" implícito var. Una variable local implícitamente tipada está fuertemente tipada como si usted mismo hubiera declarado el tipo, pero el compilador determina el tipo.
+
+Cuando varse usa con tipos de referencia que aceptan valores NULL habilitados, siempre implica un tipo de referencia que acepta valores NULL incluso si el tipo de expresión no admite valores NULL. El análisis de estado nulo del compilador protege contra la desreferenciación de un valor potencial null. Si la variable nunca se asigna a una expresión que puede ser nula, el compilador no emitirá ninguna advertencia. Si asigna la variable a una expresión que podría ser nula, debe probar que no es nula antes de quitarle la referencia para evitar advertencias.
+
+Un uso común de la varpalabra clave es con expresiones de invocación de constructores. El uso de varle permite no repetir un nombre de tipo en una declaración de variable e instanciación de objeto.
+

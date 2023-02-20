@@ -1,0 +1,10 @@
+.(Método)
+.Lenguaje: C#
+.convierte un tipo de dato en un numero entero que tiene un posible valor maximo que un integer.
+.Biblioteca: system
+
+Convierte el valor que recibe en su equivalente representado en un numero entero.
+
+double, boolean, long, byte, string pero debe ser solo numeros, si hay una letra creara una excepcion.
+
+le da propiedades logicas y aritmeticas.

@@ -1,0 +1,30 @@
+.Metodo String
+.Lenguaje: C#
+.Namespace System
+.Devuelve la ubicacion de un valor string o chart dentro de una cadena.
+
+IndexOf() es un método de string . Este método se utiliza para encontrar el índice de base cero de la primera aparición de un carácter o string especificada dentro de la instancia actual de la string. El método devuelve -1 si no se encuentra el carácter o la string. Este método se puede sobrecargar pasándole diferentes parámetros.
+
+String.IndexOf (char x)
+String.IndexOf (char x, int start1)
+String.IndexOf (char x, int inicio1, int inicio2)
+String.IndexOf (string s1)
+String.IndexOf (string s1, int start1)
+String.IndexOf (string s1, int inicio1, int inicio2)
+String.IndexOf (string s1, int start1, int start2, StringComparison cType)
+String.IndexOf (string s1, int start1, StringComparison cType)
+String.IndexOf (string s1, StringComparison cType)
+
+Método String.IndexOf (char x)
+Este método devuelve el índice de base cero de la primera aparición del carácter especificado dentro de la string. En caso de que no se funda tal carácter, devuelve -1.
+
+Método String.IndexOf (char x, int start1)
+Este método devuelve el índice de base cero de la primera aparición del carácter especificado dentro de la string. Sin embargo, la búsqueda de ese carácter comenzará desde una posición específica y, si no se encuentra, devuelve -1.
+
+Método String.IndexOf (char x, int start1, int start2)
+Este método devuelve el índice de base cero de la primera aparición del carácter especificado dentro de la string. Sin embargo, la búsqueda de ese carácter comenzará desde una posición especificada start1 hasta la posición especificada, es decir, start2 y, si no se encuentra, devuelve -1.
+
+Método String.IndexOf (string s1)
+Este método devuelve el índice de base cero de la primera aparición de la substring especificada dentro de la string. En caso de que no se encuentre dicha string, devuelve -1 igual que en el caso de los caracteres.
+
+

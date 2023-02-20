@@ -1,0 +1,91 @@
+.Variables dentro de una clase
+.Lenguaje: C#
+.Campos a los cuales, puede acceder a ellos creando un objeto de la clase y usando la sintaxis de punto ( .)
+
+Un campo es una variable de cualquier tipo que se declara directamente en una clase o estructura . Los campos son miembros de su tipo contenedor.
+
+Una clase o estructura puede tener campos de instancia, campos estáticos o ambos. Los campos de instancia son específicos de una instancia de un tipo. Si tiene una clase T, con un campo de instancia F, puede crear dos objetos de tipo T y modificar el valor de F en cada objeto sin afectar el valor en el otro objeto. Por el contrario, un campo estático pertenece al tipo en sí y se comparte entre todas las instancias de ese tipo. Puede acceder al campo estático solo mediante el nombre de tipo. Si accede al campo estático por un nombre de instancia, obtiene el error de tiempo de compilación CS0176 .
+
+En general, debe usar campos solo para variables que tienen accesibilidad privada o protegida. Los datos que su tipo expone al código del cliente deben proporcionarse a través de métodos , propiedades e indexadores . Al usar estas construcciones para el acceso indirecto a campos internos, puede protegerse contra valores de entrada no válidos. Un campo privado que almacena los datos expuestos por una propiedad pública se denomina almacén de respaldo o campo de respaldo .
+
+Los campos generalmente almacenan los datos que deben ser accesibles para más de un tipo de método y deben almacenarse durante más tiempo que la vida útil de cualquier método individual. Por ejemplo, un tipo que representa una fecha de calendario puede tener tres campos enteros: uno para el mes, uno para el día y otro para el año. Las variables que no se usan fuera del alcance de un solo método deben declararse como variables locales dentro del propio cuerpo del método.
+
+Los campos se declaran en el bloque de clase o estructura especificando el nivel de acceso del campo, seguido del tipo del campo.
+
+Para acceder a un campo en una instancia, agregue un punto después del nombre de la instancia, seguido del nombre del campo, como en instancename._fieldName. Por ejemplo:
+
+CalendarEntry birthday = new CalendarEntry();
+birthday.Day = "Saturday";
+
+A un campo se le puede dar un valor inicial usando el operador de asignación cuando se declara el campo. Para asignar automáticamente el Daycampo a "Monday", por ejemplo, declararía Daycomo en el siguiente ejemplo:
+
+public class CalendarDateWithInitialization
+{
+    public string Day = "Monday";
+    //...
+}
+
+Los campos se inicializan inmediatamente antes de llamar al constructor de la instancia del objeto. Si el constructor asigna el valor de un campo, sobrescribirá cualquier valor dado durante la declaración del campo. Para obtener más información, consulte Uso de constructores .
+
+os campos se pueden marcar como públicos , privados , protegidos , internos , internos protegidos o privados protegidos . Estos modificadores de acceso definen cómo los usuarios del tipo pueden acceder a los campos. Para obtener más información, consulte Modificadores de acceso .
+
+Un campo puede declararse opcionalmente como estático . Esto hace que el campo esté disponible para las personas que llaman en cualquier momento, incluso si no existe ninguna instancia del tipo. Para obtener más información, consulte Clases estáticas y miembros de clases estáticas .
+
+Un campo puede declararse de solo lectura . A un campo de solo lectura solo se le puede asignar un valor durante la inicialización o en un constructor. Un static readonlycampo es muy similar a una constante, excepto que el compilador de C# no tiene acceso al valor de un campo estático de solo lectura en tiempo de compilación, solo en tiempo de ejecución.
+
+el siguiente ejemplo creará un objeto de la Carclase, con el nombre myObj. Luego imprimimos el valor de los campos color y maxSpeed:
+
+class Car 
+{
+  string color = "red";
+  int maxSpeed = 200;
+
+  static void Main(string[] args)
+  {
+    Car myObj = new Car();
+    Console.WriteLine(myObj.color);
+    Console.WriteLine(myObj.maxSpeed);
+  }
+}
+
+También puede dejar los campos en blanco y modificarlos al crear el objeto:
+
+class Car 
+{
+  string color;
+  int maxSpeed;
+
+  static void Main(string[] args)
+  {
+    Car myObj = new Car();
+    myObj.color = "red";
+    myObj.maxSpeed = 200;
+    Console.WriteLine(myObj.color);
+    Console.WriteLine(myObj.maxSpeed);
+  }
+}
+
+Esto es especialmente útil cuando se crean múltiples objetos de una clase:
+
+class Car 
+{
+  string model;
+  string color;
+  int year;
+
+  static void Main(string[] args)
+  {
+    Car Ford = new Car();
+    Ford.model = "Mustang";
+    Ford.color = "red";
+    Ford.year = 1969;
+
+    Car Opel = new Car();
+    Opel.model = "Astra";
+    Opel.color = "white";
+    Opel.year = 2005;
+
+    Console.WriteLine(Ford.model);
+    Console.WriteLine(Opel.model);
+  }
+}

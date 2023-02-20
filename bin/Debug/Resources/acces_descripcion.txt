@@ -1,0 +1,13 @@
+.Acceder Array
+.Lenguaje: C#
+.Acceder a un valor de un Vector.
+
+Accede a un elemento de matriz haciendo referencia al número de índice.
+
+string[] weekDays2 = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
+
+el indice es:  
+
+string value = weekDays2[2];
+
+indice--->[2]

@@ -1,0 +1,151 @@
+.File.Create Method
+.Lenguaje: C#
+.Namespace System.IO
+.Crea o sobrescribe un archivo en la ruta especificada.
+
+Crear (string)
+Crea o sobrescribe un archivo en la ruta especificada.
+
+public static System.IO.FileStream Create (string path);
+
+
+path(String) La ruta y el nombre del archivo a crear.
+
+Returns(FileStream) Un FileStream que proporciona acceso de lectura/escritura al archivo especificado en path.
+
+Ejemplos
+El siguiente ejemplo crea un archivo en la ruta especificada, escribe alguna información en el archivo y lee del archivo.
+
+using System;
+using System.IO;
+using System.Text;
+
+class Test
+{
+    public static void Main()
+    {
+        string path = @"c:\temp\MyTest.txt";
+
+        try
+        {
+            // Create the file, or overwrite if the file exists.
+            using (FileStream fs = File.Create(path))
+            {
+                byte[] info = new UTF8Encoding(true).GetBytes("This is some text in the file.");
+                // Add some information to the file.
+                fs.Write(info, 0, info.Length);
+            }
+
+            // Open the stream and read it back.
+            using (StreamReader sr = File.OpenText(path))
+            {
+                string s = "";
+                while ((s = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(s);
+                }
+            }
+        }
+
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.ToString());
+        }
+    }
+}
+
+Observaciones
+El objeto FileStream creado por este método tiene un valor de FileShare predeterminado de Ninguno ; ningún otro proceso o código puede acceder al archivo creado hasta que se cierre el identificador del archivo original.
+
+Este método es equivalente a la sobrecarga del método Create(String, Int32) utilizando el tamaño de búfer predeterminado de 4096 bytes.
+
+Se pathpermite que el parámetro especifique información de ruta relativa o absoluta. La información de ruta relativa se interpreta como relativa al directorio de trabajo actual. Para obtener el directorio de trabajo actual, consulte GetCurrentDirectory .
+
+Si el archivo especificado no existe, se crea; si existe y no es de solo lectura, se sobrescribe el contenido.
+
+De forma predeterminada, todos los usuarios tienen acceso completo de lectura/escritura a los archivos nuevos. El archivo se abre con acceso de lectura/escritura y debe cerrarse antes de que otra aplicación pueda abrirlo.
+
+Crear (Cadena, Int32)
+Crea o sobrescribe un archivo en la ruta especificada, especificando un tamaño de búfer.
+
+public static System.IO.FileStream Create (string path, int bufferSize);
+
+Parámetros:
+sendero
+Cuerda
+La ruta y el nombre del archivo a crear.
+
+Devoluciones:
+FileStream
+Un FileStream con el tamaño de búfer especificado que proporciona acceso de lectura/escritura al archivo especificado en path.
+
+Ejemplos
+El siguiente ejemplo crea un archivo con el tamaño de búfer especificado.
+
+using System;
+using System.IO;
+using System.Text;
+
+class Test
+{
+    public static void Main()
+    {
+        string path = @"c:\temp\MyTest.txt";
+
+        // Create the file, or overwrite if the file exists.
+        using (FileStream fs = File.Create(path, 1024))
+        {
+            byte[] info = new UTF8Encoding(true).GetBytes("This is some text in the file.");
+            // Add some information to the file.
+            fs.Write(info, 0, info.Length);
+        }
+
+        // Open the stream and read it back.
+        using (StreamReader sr = File.OpenText(path))
+        {
+            string s = "";
+            while ((s = sr.ReadLine()) != null)
+            {
+                Console.WriteLine(s);
+            }
+        }
+    }
+}
+
+Observaciones
+El objeto FileStream creado por este método tiene un valor de FileShare predeterminado de Ninguno ; ningún otro proceso o código puede acceder al archivo creado hasta que se cierre el identificador del archivo original.
+
+Se pathpermite que el parámetro especifique información de ruta relativa o absoluta. La información de ruta relativa se interpreta como relativa al directorio de trabajo actual. Para obtener el directorio de trabajo actual, consulte GetCurrentDirectory .
+
+Este método es equivalente a la sobrecarga del constructor FileStream(String, FileMode, FileAccess, FileShare, Int32) . Si el archivo especificado no existe, se crea; si existe y no es de solo lectura, se sobrescribe el contenido.
+
+De forma predeterminada, todos los usuarios tienen acceso completo de lectura/escritura a los archivos nuevos. El archivo se abre con acceso de lectura/escritura y debe cerrarse antes de que otra aplicación pueda abrirlo.
+
+Crear (Cadena, Int32, Opciones de archivo)
+Crea o sobrescribe un archivo en la ruta especificada, especificando un tamaño de búfer y opciones que describen cómo crear o sobrescribir el archivo.
+
+public static System.IO.FileStream Create (string path, int bufferSize, System.IO.FileOptions options);
+
+Parámetros
+sendero
+Cuerda
+La ruta y el nombre del archivo a crear.
+
+tamaño del búfer
+int32
+El número de bytes almacenados en búfer para lecturas y escrituras en el archivo.
+
+opciones
+Opciones de archivo
+Uno de los valores de FileOptions que describe cómo crear o sobrescribir el archivo.
+
+Devoluciones
+FileStream
+Un archivo nuevo con el tamaño de búfer especificado.
+
+Observaciones
+Se pathpermite que el parámetro especifique información de ruta relativa o absoluta. La información de ruta relativa se interpreta como relativa al directorio de trabajo actual. Para obtener el directorio de trabajo actual, consulte GetCurrentDirectory .
+
+Este método es equivalente a la sobrecarga del constructor FileStream(String, FileMode, FileAccess, FileShare, Int32) . Si el archivo especificado no existe, se crea; si existe y no es de solo lectura, se sobrescribe el contenido.
+
+De forma predeterminada, todos los usuarios tienen acceso completo de lectura/escritura a los archivos nuevos. El archivo se abre con acceso de lectura/escritura y debe cerrarse antes de que otra aplicación pueda abrirlo.

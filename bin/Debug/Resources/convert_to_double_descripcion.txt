@@ -1,0 +1,10 @@
+.(Método)
+.Lenguaje: C#
+.convierte un tipo de dato a un numero real
+.Biblioteca: system
+
+Convierte un valor especificado en un número de coma flotante de precisión doble.
+
+int, long, string pero si el string tiene letras y no solo numeros producira un error.
+
+le da las propiedades de logica y aritmetica.

@@ -1,0 +1,12 @@
+.Largo de Array
+.Lenguaje: C#
+.Devuelve el Largo de un vector.
+
+Para averiguar cuántos elementos tiene una matriz, use la Length propiedad.
+
+string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+Console.WriteLine(cars.Length);
+// devuelve 4
+
+En C#, las matrices son actualmente objetos, y no simplemente regiones direccionables de memoria contigua como en C y C++. Array es el tipo base abstracto de todos los tipos de matriz. Puede usar las propiedades, y otros miembros de clase, que tiene Array. Un ejemplo de esto sería usar la propiedad Length para obtener la longitud de una matriz. El código siguiente asigna la longitud de la matriz numbers, que es 5, a una variable denominada lengthOfNumbers:
+

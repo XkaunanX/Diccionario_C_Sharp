@@ -1,0 +1,26 @@
+.Declaración de clases
+.Lenguaje: C#
+.Los métodos normalmente pertenecen a una clase y definen cómo se comporta un objeto de una clase.
+
+Al igual que con los campos, puede acceder a los métodos con la sintaxis de puntos. Sin embargo, tenga en cuenta que el método debe ser public. Y recuerda que usamos el nombre del método seguido de dos paréntesis ()y un punto y coma ;para llamar (ejecutar) el método:
+
+class Car 
+{
+  string color;                 // field
+  int maxSpeed;                 // field
+  public void fullThrottle()    // method
+  {
+    Console.WriteLine("The car is going as fast as it can!"); 
+  }
+
+  static void Main(string[] args)
+  {
+    Car myObj = new Car();
+    myObj.fullThrottle();  // Call the method
+  }
+}
+
+¿Por qué declaramos el método como publicy no static ?
+
+La razón es simple: static se puede acceder a un método sin crear un objeto de la clase, mientras que public solo los objetos pueden acceder a los métodos.
+

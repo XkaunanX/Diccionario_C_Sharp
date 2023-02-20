@@ -1,0 +1,96 @@
+.C# Interface
+.Lenguaje: C#
+.Otra forma de lograr la abstracción en C# es con interfaces.
+
+interfacees una " clase abstracta " completamente , que solo puede contener métodos y propiedades abstractos (con cuerpos vacíos):
+
+// interface
+interface Animal 
+{
+  void animalSound(); // interface method (does not have a body)
+  void run(); // interface method (does not have a body)
+}
+
+Se considera una buena práctica comenzar con la letra "I" al comienzo de una interfaz, ya que le facilita a usted y a los demás recordar que se trata de una interfaz y no de una clase.
+
+De forma predeterminada, los miembros de una interfaz son abstracty public.
+
+Nota: las interfaces pueden contener propiedades y métodos, pero no campos.
+
+Para acceder a los métodos de la interfaz, la interfaz debe ser "implementada" (algo así como heredada) por otra clase. Para implementar una interfaz, use el : símbolo (al igual que con la herencia). El cuerpo del método de interfaz lo proporciona la clase "implementar". Tenga en cuenta que no tiene que usar la override palabra clave al implementar una interfaz:
+
+// Interface
+interface IAnimal 
+{
+  void animalSound(); // interface method (does not have a body)
+}
+
+// Pig "implements" the IAnimal interface
+class Pig : IAnimal 
+{
+  public void animalSound() 
+  {
+    // The body of animalSound() is provided here
+    Console.WriteLine("The pig says: wee wee");
+  }
+}
+
+class Program 
+{
+  static void Main(string[] args) 
+  {
+    Pig myPig = new Pig();  // Create a Pig object
+    myPig.animalSound();
+  }
+}
+
+Notas sobre las interfaces:
+.Al igual que las clases abstractas , las interfaces no se pueden usar para crear objetos (en el ejemplo anterior, no es posible crear un objeto "IAnimal" en la clase Programa)
+.Los métodos de interfaz no tienen cuerpo: el cuerpo lo proporciona la clase "implementar"
+.En la implementación de una interfaz, debe anular todos sus métodos
+.Las interfaces pueden contener propiedades y métodos, pero no campos/variables
+.Los miembros de la interfaz son por defecto abstracty public
+.Una interfaz no puede contener un constructor (ya que no se puede usar para crear objetos)
+
+¿Por qué y cuándo usar interfaces?
+
+1) Para lograr la seguridad, oculte ciertos detalles y solo muestre los detalles importantes de un objeto (interfaz).
+
+2) C# no admite "herencia múltiple" (una clase solo puede heredar de una clase base). Sin embargo, se puede lograr con interfaces, porque la clase puede implementar múltiples interfaces. Nota: Para implementar múltiples interfaces, sepárelas con una coma (vea el ejemplo a continuación).
+
+Múltiples interfaces
+Para implementar varias interfaces, sepárelas con una coma:
+
+Ejemplo
+interface IFirstInterface 
+{
+  void myMethod(); // interface method
+}
+
+interface ISecondInterface 
+{
+  void myOtherMethod(); // interface method
+}
+
+// Implement multiple interfaces
+class DemoClass : IFirstInterface, ISecondInterface 
+{
+  public void myMethod() 
+  {
+    Console.WriteLine("Some text..");
+  }
+  public void myOtherMethod() 
+  {
+    Console.WriteLine("Some other text...");
+  }
+}
+
+class Program 
+{
+  static void Main(string[] args)
+  {
+    DemoClass myObj = new DemoClass();
+    myObj.myMethod();
+    myObj.myOtherMethod();
+  }
+}

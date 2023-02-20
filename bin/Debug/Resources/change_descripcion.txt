@@ -1,0 +1,14 @@
+.Cambiar valor Array
+.Lenguaje: C#
+.Cambiar el valor de un indice de un vector.
+
+Para cambiar el valor de un elemento específico, consulte el número de índice.
+
+Myarray[123] = "cambiadisimo";
+
+string tuki = Myarray[123];
+
+Console.Write(tuki);
+
+salida = "cambiadisimo"
+

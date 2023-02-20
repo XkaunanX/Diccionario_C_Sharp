@@ -1,0 +1,10 @@
+.Bucle
+.Lenguaje: C#
+.repite las instruciones del cuerpo hasta que se cumpla una condicion
+
+La instrucción foreach ejecuta una instrucción o un bloque de instrucciones para cada elemento de una instancia del tipo que implementa la interfaz System.Collections.IEnumerable o System.Collections.Generic.IEnumerable<T>.
+
+La instrucción foreach no está limitada a esos tipos. Puede usarla con una instancia de cualquier tipo que cumpla las condiciones siguientes:
+
+Un tipo tiene el método público GetEnumerator sin parámetros. A partir de C# 9.0, el método GetEnumerator puede ser el método de extensión de un tipo.
+El tipo de valor devuelto del método GetEnumerator tiene la propiedad pública Current y el método público MoveNext sin parámetros, cuyo tipo de valor devuelto es bool.

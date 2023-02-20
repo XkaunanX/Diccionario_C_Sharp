@@ -1,0 +1,86 @@
+.Declaración de clases
+.Lenguaje: C#
+.Aunque a veces se usan indistintamente, una clase y un objeto son cosas diferentes. Una clase define un tipo de objeto, pero no es un objeto en sí mismo. Un objeto es una entidad concreta basada en una clase y, a veces, se lo denomina instancia de una clase.
+
+Los objetos se pueden crear utilizando la new palabra clave seguida del nombre de la clase en la que se basará el objeto, así:
+
+public class Customer
+{
+   // Fields, properties, methods and events go here...
+}
+
+¡¡¡¡¡¡¡¡¡Customer object1 = new Customer();!!!!!!!!
+
+Cuando se crea una instancia de una clase, se devuelve una referencia al objeto al programador. En el ejemplo anterior, object1es una referencia a un objeto que se basa en Customer. Esta referencia hace referencia al nuevo objeto pero no contiene los datos del objeto en sí. De hecho, puede crear una referencia de objeto sin crear ningún objeto:
+
+Customer object2;
+
+No recomendamos crear referencias a objetos como la anterior que no se refieran a un objeto porque intentar acceder a un objeto a través de dicha referencia fallará en tiempo de ejecución. Sin embargo, dicha referencia se puede hacer para referirse a un objeto, ya sea creando un nuevo objeto o asignándole un objeto existente, como este:
+
+Customer object3 = new Customer();
+Customer object4 = object3;
+
+Este código crea dos referencias a objetos que hacen referencia al mismo objeto. Por lo tanto, cualquier cambio que se realice en el objeto object3se refleja en los usos posteriores de object4. Debido a que se hace referencia a los objetos que se basan en clases por referencia, las clases se conocen como tipos de referencia.
+
+herencia de clases
+Las clases admiten completamente la herencia , una característica fundamental de la programación orientada a objetos. Cuando crea una clase, puede heredar de cualquier otra clase que no esté definida como sealed, y otras clases pueden heredar de su clase y anular los métodos virtuales de clase. Además, puede implementar una o más interfaces.
+
+La herencia se logra usando una derivación , lo que significa que una clase se declara usando una clase base de la que hereda datos y comportamiento. Una clase base se especifica agregando dos puntos y el nombre de la clase base después del nombre de la clase derivada, así:
+
+public class Manager : Employee
+{
+    // Los campos, propiedades, métodos y eventos de los empleados se heredan
+    // Los nuevos campos, propiedades, métodos y eventos del administrador van aquí...
+}
+
+Cuando una clase declara una clase base, hereda todos los miembros de la clase base excepto los constructores. Para obtener más información, consulte Herencia .
+
+Una clase en C# solo puede heredar directamente de una clase base. Sin embargo, dado que una clase base puede heredar de otra clase, una clase puede heredar indirectamente varias clases base. Además, una clase puede implementar directamente una o más interfaces. Para obtener más información, consulte Interfaces .
+
+Se puede declarar una clase abstract. Una clase abstracta contiene métodos abstractos que tienen una definición de firma pero no implementación. Las clases abstractas no se pueden instanciar. Solo se pueden usar a través de clases derivadas que implementan los métodos abstractos. Por el contrario, una clase sellada no permite que otras clases se deriven de ella. Para obtener más información, consulte Clases abstractas y selladas y miembros de clase .
+
+Las definiciones de clase se pueden dividir entre diferentes archivos de origen.
+
+public class Person
+{
+    // Constructor that takes no arguments:
+    public Person()
+    {
+        Name = "unknown";
+    }
+
+    // Constructor that takes one argument:
+    public Person(string name)
+    {
+        Name = name;
+    }
+
+    // Auto-implemented readonly property:
+    public string Name { get; }
+
+    // Method that overrides the base class (System.Object) implementation.
+    public override string ToString()
+    {
+        return Name;
+    }
+}
+class TestPerson
+{
+    static void Main()
+    {
+        // Call the constructor that has no parameters.
+        var person1 = new Person();
+        Console.WriteLine(person1.Name);
+
+        // Call the constructor that has one parameter.
+        var person2 = new Person("Sarah Jones");
+        Console.WriteLine(person2.Name);
+        // Get the string representation of the person2 instance.
+        Console.WriteLine(person2);
+    }
+}
+// Output:
+// unknown
+// Sarah Jones
+// Sarah Jones
+

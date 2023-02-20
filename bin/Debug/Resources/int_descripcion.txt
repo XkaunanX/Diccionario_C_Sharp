@@ -1,0 +1,13 @@
+.Tipo de Dato
+.Lenguaje: C#
+.números enteros
+
+Los tipos numéricos integrales representan números enteros. Todos los tipos numéricos integrales son tipos de valor . También son tipos simples y se pueden inicializar con literales . Todos los tipos numéricos integrales admiten operadores aritméticos , lógicos bit a bit , de comparación y de igualdad .
+
+El valor predeterminado de cada tipo integral es cero, 0. Cada uno de los tipos integrales, excepto los tipos de tamaño nativo, tiene MinValueconstantes MaxValueque proporcionan el valor mínimo y máximo de ese tipo.
+
+Los literales enteros pueden ser:
+
+decimal : sin ningún prefijo
+hexadecimal : con el prefijo 0xo0X
+binary : con el prefijo 0bo 0B(disponible en C# 7.0 y versiones posteriores)

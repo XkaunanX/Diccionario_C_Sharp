@@ -1,0 +1,27 @@
+.Lista de instrucciones para ejecutar
+.Lenguaje: C#
+.Crear una lista de condiciones para ejecutar un bloque de codigo
+
+OBSERVACION
+La switch expresión se evalúa una vez¡¡
+
+La instrucción switch selecciona una lista de instrucciones para ejecutarla en función de la coincidencia de un patrón con una expresión de coincidencia.
+
+Un patrón relacional (disponible en C# 9.0 y versiones posteriores): para comparar un resultado de expresión con una constante.
+
+Un patrón constante (disponible en C# 7.0 y versiones posteriores): para probar si un resultado de expresión es igual a una constante.
+
+Una instrucción switch ejecuta la lista de instrucciones en la primera sección de switch cuyo patrón de caso coincida con una expresión de coincidencia y cuya restricción de caso, de haberla, se evalúe como true. Una instrucción switch evalúa los patrones de casos en el orden de texto de arriba a abajo. El compilador genera un error cuando una instrucción switch contiene un caso inaccesible. Ese es un caso que ya se controla mediante un caso superior o cuyo patrón es imposible de hacer coincidir.
+
+switch(expression) 
+{
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+    break;
+}

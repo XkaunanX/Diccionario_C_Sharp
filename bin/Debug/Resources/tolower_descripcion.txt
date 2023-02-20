@@ -1,0 +1,5 @@
+.String metodo
+.Lenguaje: C#
+.Convierte las mayusculas en minusculas
+
+La operación de mayúsculas y minúsculas que resulta de llamar al método ToLower() tiene en cuenta las convenciones de mayúsculas y minúsculas de la referencia cultural actual. Si necesita la versión en minúsculas o mayúsculas de un identificador de sistema operativo, como un nombre de archivo, una canalización con nombre o una clave de registro, use los métodos ToLowerInvariant o ToUpperInvariant . Esto produce el mismo resultado en todas las culturas (a diferencia del método ToLower() ) y funciona de manera más eficiente.

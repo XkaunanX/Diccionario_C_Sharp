@@ -1,0 +1,62 @@
+.C# Inheritance
+.Lenguaje: C#
+.En C#, es posible heredar campos y métodos de una clase a otra. Agrupamos el "concepto de herencia" en dos categorías:
+
+Clase derivada (hijo): la clase que hereda de otra clase
+Clase base (padre): la clase de la que se hereda
+
+Para heredar de una clase, use el :símbolo.
+
+En el siguiente ejemplo, la Carclase (hijo) hereda los campos y métodos de la Vehicleclase (padre):
+
+EJEMPLO
+class Vehicle  // base class (parent) 
+{
+  public string brand = "Ford";  // Vehicle field
+  public void honk()             // Vehicle method 
+  {                    
+    Console.WriteLine("Tuut, tuut!");
+  }
+}
+
+class Car : Vehicle  // derived class (child)
+{
+  public string modelName = "Mustang";  // Car field
+}
+
+class Program
+{
+  static void Main(string[] args)
+  {
+    // Create a myCar object
+    Car myCar = new Car();
+
+    myCar.honk();
+ 
+    Console.WriteLine(myCar.brand + " " + myCar.modelName);
+  }
+}
+
+FIN EJEMPLO
+
+¿Por qué y cuándo usar "herencia"?
+- Es útil para la reutilización de código: reutiliza campos y métodos de una clase existente cuando creas una nueva clase.
+
+La palabra clave sellada
+Si no desea que otras clases hereden de una clase, use la sealedpalabra clave:
+
+Si intenta acceder a una sealedclase, C# generará un error:
+
+sealed class Vehicle 
+{
+  ...
+}
+
+class Car : Vehicle 
+{
+  ...
+}
+
+El mensaje de error será algo como esto:
+
+'Car': cannot derive from sealed type 'Vehicle'

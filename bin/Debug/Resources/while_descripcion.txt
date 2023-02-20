@@ -1,0 +1,7 @@
+.Bucle
+.Lenguaje: C#
+.Ejecuta una instrucción o un bloque de instrucciones mientras que una expresión booleana especificada se evalúa como true.
+
+La instrucción while ejecuta una instrucción o un bloque de instrucciones mientras que una expresión booleana especificada se evalúa como true. Como esa expresión se evalúa antes de cada ejecución del bucle, un bucle while se ejecuta cero o varias veces. Esto es diferente de un bucle do que se ejecuta una o varias veces.
+
+si la expresion nunca cambia a false, se crea un bug y tira todo el sistema.

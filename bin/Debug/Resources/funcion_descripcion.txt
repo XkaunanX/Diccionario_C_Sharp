@@ -1,0 +1,151 @@
+.Funciones locales
+.Lenguaje: C#
+.Declarar una funcion
+
+Crear un método (Funcion)!
+Un método se define con el nombre del método, seguido de paréntesis () . C# proporciona algunos métodos predefinidos, con los que ya está familiarizado, como Main(), pero también puede crear sus propios métodos para realizar determinadas acciones
+
+class Program
+{
+  static void MyMethod() 
+  {
+    // code to be executed
+  }
+}
+
+.MyMethod()es el nombre del método
+.static significa que el método pertenece a la clase Programa y no un objeto de la clase Programa. Aprenderá más sobre objetos y cómo acceder a métodos a través de objetos más adelante en este tutorial
+.void significa que este método no tiene un valor de retorno. Aprenderá más sobre los valores devueltos más adelante en este capítulo
+
+en C#, es una buena práctica comenzar con una letra mayúscula al nombrar métodos, ya que hace que el código sea más fácil de leer.
+
+Llamar a un método!
+Para llamar (ejecutar) un método, escriba el nombre del método seguido de dos paréntesis () y un punto y coma ;
+
+static void MyMethod() 
+{
+  Console.WriteLine("I just got executed!");
+}
+
+static void Main(string[] args)
+{
+  MyMethod();
+}
+
+Un método puede ser llamado varias veces
+
+<modifiers> <return-type> <method-name> <parameter-list>
+
+.async
+.unsafe
+.static(en C# 8.0 y versiones posteriores). Una función local estática no puede capturar variables locales o el estado de la instancia.
+.extern(en C# 9.0 y versiones posteriores). Una función local externa debe ser static.
+
+Todas las variables locales que están definidas en el miembro contenedor, incluidos sus parámetros de método, son accesibles en una función local no estática.
+
+A diferencia de una definición de método, una definición de función local no puede incluir el modificador de acceso a miembros. Debido a que todas las funciones locales son privadas, incluido un modificador de acceso, como la privatepalabra clave, genera el error del compilador CS0106, "El modificador 'privado' no es válido para este elemento".
+
+El siguiente ejemplo define una función local llamada AppendPathSeparatorque es privada para un método llamado GetText
+
+private static string GetText(string path, string filename)
+{
+     var reader = File.OpenText($"{AppendPathSeparator(path)}{filename}");
+     var text = reader.ReadToEnd();
+     return text;
+
+     string AppendPathSeparator(string filepath)
+     {
+        return filepath.EndsWith(@"\") ? filepath : filepath + @"\";
+     }
+}
+
+A partir de C# 9.0, puede aplicar atributos a una función local, sus parámetros y parámetros de tipo, como muestra el siguiente ejemplo:
+
+#nullable enable
+private static void Process(string?[] lines, string mark)
+{
+    foreach (var line in lines)
+    {
+        if (IsValid(line))
+        {
+            // Processing logic...
+        }
+    }
+
+    bool IsValid([NotNullWhen(true)] string? line)
+    {
+        return !string.IsNullOrEmpty(line) && line.Length >= mark.Length;
+    }
+}
+
+El ejemplo anterior usa un atributo especial para ayudar al compilador en el análisis estático en un contexto anulable.
+
+Funciones locales y excepciones
+Una de las características útiles de las funciones locales es que pueden permitir que surjan excepciones de inmediato. Para los iteradores de métodos, las excepciones aparecen solo cuando se enumera la secuencia devuelta y no cuando se recupera el iterador. Para los métodos asincrónicos, se observa cualquier excepción lanzada en un método asincrónico cuando se espera la tarea devuelta.
+
+El siguiente ejemplo define un OddSequencemétodo que enumera números impares en un rango específico. Debido a que pasa un número mayor que 100 al OddSequencemétodo enumerador, el método genera una excepción ArgumentOutOfRangeException . Como muestra el resultado del ejemplo, la excepción aparece solo cuando itera los números, y no cuando recupera el enumerador.
+
+Si coloca la lógica del iterador en una función local, se lanzan excepciones de validación de argumentos cuando recupera el enumerador
+
+Funciones locales frente a expresiones lambda
+A primera vista, las funciones locales y las expresiones lambda son muy similares. En muchos casos, la elección entre usar expresiones lambda y funciones locales es una cuestión de estilo y preferencia personal . Sin embargo, existen diferencias reales en cuanto a dónde puede usar uno u otro que debe tener en cuenta.
+
+Examinemos las diferencias entre las implementaciones de la función local y la expresión lambda del algoritmo factorial. Aquí está la versión usando una función local:
+
+public static int LocalFunctionFactorial(int n)
+{
+    return nthFactorial(n);
+
+    int nthFactorial(int number) => number < 2 
+        ? 1 
+        : number * nthFactorial(number - 1);
+}
+
+LAMBDA:
+
+public static int LambdaFactorial(int n)
+{
+    Func<int, int> nthFactorial = default(Func<int, int>);
+
+    nthFactorial = number => number < 2
+        ? 1
+        : number * nthFactorial(number - 1);
+
+    return nthFactorial(n);
+}
+
+Denominación
+Las funciones locales se nombran explícitamente como métodos. Las expresiones lambda son métodos anónimos y deben asignarse a variables de un delegatetipo, normalmente Actiono Functipos. Cuando declara una función local, el proceso es como escribir un método normal; usted declara un tipo de devolución y una firma de función.
+
+Firmas de funciones y tipos de expresiones lambda
+Las expresiones lambda se basan en el tipo de la variable Action/ que se les asigna para determinar el argumento y los tipos de devolución. FuncEn las funciones locales, dado que la sintaxis es muy parecida a escribir un método normal, los tipos de argumentos y el tipo de retorno ya forman parte de la declaración de la función.
+
+A partir de C# 10, algunas expresiones lambda tienen un tipo natural , lo que permite al compilador inferir el tipo de retorno y los tipos de parámetros de la expresión lambda.
+
+Asignación definitiva
+Las expresiones lambda son objetos que se declaran y asignan en tiempo de ejecución. Para que se pueda utilizar una expresión lambda, es necesario asignarla definitivamente: se debe declarar la variable Action/ Funca la que se asignará y asignarle la expresión lambda. Tenga en cuenta que LambdaFactorialdebe declarar e inicializar la expresión lambda nthFactorialantes de definirla. No hacerlo da como resultado un error de tiempo de compilación para hacer referencia nthFactorialantes de asignarlo.
+
+Las funciones locales se definen en tiempo de compilación. Como no están asignados a variables, se puede hacer referencia a ellos desde cualquier ubicación de código donde esté dentro del alcance ; en nuestro primer ejemplo LocalFunctionFactorial, podríamos declarar nuestra función local encima o debajo de la returndeclaración y no desencadenar ningún error del compilador.
+
+Estas diferencias significan que los algoritmos recursivos son más fáciles de crear usando funciones locales. Puede declarar y definir una función local que se llame a sí misma. Las expresiones lambda deben declararse y asignarse un valor predeterminado antes de que puedan reasignarse a un cuerpo que haga referencia a la misma expresión lambda.
+
+Implementación como delegado
+Las expresiones lambda se convierten en delegados cuando se declaran. Las funciones locales son más flexibles ya que pueden escribirse como un método tradicional o como un delegado. Las funciones locales solo se convierten en delegados cuando se usan como delegado.
+
+Si declara una función local y solo hace referencia a ella llamándola como un método, no se convertirá en un delegado.
+
+Captura de variables
+Las reglas de asignación definitiva también afectan a cualquier variable capturada por la función local o la expresión lambda. El compilador puede realizar un análisis estático que permite que las funciones locales asignen definitivamente las variables capturadas en el ámbito adjunto. Considere este ejemplo:
+
+int M()
+{
+    int y;
+    LocalFunction();
+    return y;
+
+    void LocalFunction() => y = 0;
+}
+
+El compilador puede determinar que LocalFunctionasigna definitivamente ycuando se le llama. Debido a que LocalFunctionse llama antes de la returnsentencia, yse asigna definitivamente en la returnsentencia.
+
+Tenga en cuenta que cuando una función local captura variables en el ámbito adjunto, la función local se implementa como un tipo de delegado.

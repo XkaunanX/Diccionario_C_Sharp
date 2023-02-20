@@ -1,0 +1,12 @@
+.Tipo de Dato
+.Lenguaje: C#
+.valores booleanos (verdadero o falso, 0 o 1)
+.Libreria System.Boolean 
+
+La bool palabra clave type es un alias para el tipo de estructura .NET System.Boolean que representa un valor booleano, que puede ser trueo false.
+
+Para realizar operaciones lógicas con valores del booltipo, utilice operadores lógicos booleanos . El booltipo es el tipo de resultado de los operadores de comparación e igualdad . Una boolexpresión puede ser una expresión condicional de control en las declaraciones if , do , while y for y en el operador condicional?: .
+
+El valor predeterminado del booltipo es false.
+
+Utilice el tipo anulable bool?si necesita admitir la lógica de tres valores, por ejemplo, cuando trabaja con bases de datos que admiten un tipo booleano de tres valores. Para los bool?operandos, los operadores predefinidos &y admiten la lógica de tres valores. 

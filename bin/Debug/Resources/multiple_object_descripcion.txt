@@ -1,0 +1,20 @@
+.Declaración de clases
+.Lenguaje: C#
+.Puede crear múltiples objetos de una clase:
+
+Crea dos objetos de Car:
+
+class Car
+{
+  string color = "red";
+  static void Main(string[] args)
+  {
+    Car myObj1 = new Car();
+    Car myObj2 = new Car();
+    Console.WriteLine(myObj1.color);
+    Console.WriteLine(myObj2.color);
+  }
+}
+
+Tenga en cuenta que usamos la sintaxis de punto ( .) para acceder a variables/campos dentro de una clase ( myObj.color).
+

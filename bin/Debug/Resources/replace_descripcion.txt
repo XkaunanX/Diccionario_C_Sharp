@@ -1,0 +1,159 @@
+.File.Replace Method
+.Lenguaje: C#
+.Namespace System.IO
+.Reemplaza el contenido de un archivo específico con el contenido de otro archivo, eliminando el archivo original y creando una copia de seguridad del archivo reemplazado.
+
+Observaciones
+Los métodos de reemplazo reemplazan el contenido de un archivo específico con el contenido de otro archivo. También crean una copia de seguridad del archivo que se reemplazó.
+
+Replace(String, String, String, Boolean)
+
+Reemplaza el contenido de un archivo especificado con el contenido de otro archivo, elimina el archivo original y crea una copia de seguridad del archivo reemplazado y, opcionalmente, ignora los errores de fusión.
+
+public static void Replace (string sourceFileName, string destinationFileName, string? destinationBackupFileName, bool ignoreMetadataErrors);
+
+arámetros
+sourceFileName
+Cuerda
+El nombre de un archivo que reemplaza el archivo especificado por destinationFileName.
+
+destinoFileName
+Cuerda
+El nombre del archivo que se reemplaza.
+
+destinoBackupFileName
+Cuerda
+El nombre del archivo de copia de seguridad.
+
+ignorarMetadataErrors
+booleano
+truepara ignorar los errores de combinación (como atributos y listas de control de acceso (ACL)) del archivo reemplazado al archivo de reemplazo; de lo contrario, false.
+
+Observaciones
+El método Reemplazar reemplaza el contenido de un archivo específico con el contenido de otro archivo. También crea una copia de seguridad del archivo que se reemplazó.
+
+Si sourceFileNamey destinationFileNameestán en volúmenes diferentes, este método generará una excepción. Si destinationBackupFileNameestá en un volumen diferente del archivo de origen, se eliminará el archivo de copia de seguridad.
+
+Pase nullal destinationBackupFileNameparámetro si no desea crear una copia de seguridad del archivo que se está reemplazando.
+
+Si destinationBackupFileNameya existe, se sobrescribirá con el contenido del destinationFileNamearchivo.
+
+Ejemplos
+El siguiente ejemplo de código usa el método Reemplazar para reemplazar un archivo con otro archivo y crear una copia de seguridad del archivo reemplazado.
+
+using System;
+using System.IO;
+
+namespace FileSystemExample
+{
+    class FileExample
+    {
+        public static void Main()
+        {
+            try
+            {
+                string OriginalFile = "test.xml";
+                string FileToReplace = "test2.xml";
+                string BackUpOfFileToReplace = "test2.xml.bac";
+
+                Console.WriteLine("Move the contents of " + OriginalFile + " into " + FileToReplace + ", delete " + OriginalFile +
+                                   ", and create a backup of " + FileToReplace + ".");
+
+                // Replace the file.
+                ReplaceFile(OriginalFile, FileToReplace, BackUpOfFileToReplace);
+
+                Console.WriteLine("Done");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+            Console.ReadLine();
+        }
+
+        // Move a file into another file, delete the original, and create a backup of the replaced file.
+        public static void ReplaceFile(string FileToMoveAndDelete, string FileToReplace, string BackupOfFileToReplace)
+        {
+            File.Replace(FileToMoveAndDelete, FileToReplace, BackupOfFileToReplace, false);
+        }
+    }
+}
+
+Se aplica a
+.NET 7 Preview 5 y otras versiones
+
+Replace(String, String, String)
+
+Reemplaza el contenido de un archivo específico con el contenido de otro archivo, eliminando el archivo original y creando una copia de seguridad del archivo reemplazado.
+
+public static void Replace (string sourceFileName, string destinationFileName, string? destinationBackupFileName);
+
+arámetros
+sourceFileName
+Cuerda
+El nombre de un archivo que reemplaza el archivo especificado por destinationFileName.
+
+destinoFileName
+Cuerda
+El nombre del archivo que se reemplaza.
+
+destinoBackupFileName
+Cuerda
+El nombre del archivo de copia de seguridad.
+
+Observaciones
+El método Reemplazar reemplaza el contenido de un archivo específico con el contenido de otro archivo. También crea una copia de seguridad del archivo que se reemplazó.
+
+Si sourceFileNamey destinationFileNameestán en volúmenes diferentes, este método generará una excepción. Si destinationBackupFileNameestá en un volumen diferente del archivo de origen, se eliminará el archivo de copia de seguridad.
+
+Pase nullal destinationBackupFileNameparámetro si no desea crear una copia de seguridad del archivo que se está reemplazando.
+
+Si destinationBackupFileNameya existe, se sobrescribirá con el contenido del destinationFileNamearchivo.
+
+Se aplica a
+.NET 7 Preview 5 y otras versiones
+
+Ejemplos
+El siguiente ejemplo de código usa el método Reemplazar para reemplazar un archivo con otro archivo y crear una copia de seguridad del archivo reemplazado.
+
+using System;
+using System.IO;
+
+namespace FileSystemExample
+{
+    class FileExample
+    {
+        public static void Main()
+        {
+            try
+            {
+                string OriginalFile = "test.xml";
+                string FileToReplace = "test2.xml";
+                string BackUpOfFileToReplace = "test2.xml.bac";
+
+                Console.WriteLine("Move the contents of " + OriginalFile + " into " + FileToReplace + ", delete " + OriginalFile +
+                                   ", and create a backup of " + FileToReplace + ".");
+
+                // Replace the file.
+                ReplaceFile(OriginalFile, FileToReplace, BackUpOfFileToReplace);
+
+                Console.WriteLine("Done");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+            Console.ReadLine();
+        }
+
+        // Move a file into another file, delete the original, and create a backup of the replaced file.
+        public static void ReplaceFile(string FileToMoveAndDelete, string FileToReplace, string BackupOfFileToReplace)
+        {
+            File.Replace(FileToMoveAndDelete, FileToReplace, BackupOfFileToReplace, false);
+        }
+    }
+}
+
+

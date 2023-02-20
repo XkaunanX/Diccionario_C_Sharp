@@ -1,0 +1,8 @@
+.(Método)
+.Lenguaje: C#
+.Escribe un texto en consola
+.Biblioteca: system
+
+Escribe un valor en pantalla y avanza de línea. En general, podrá ser un texto, pero también un valor que se pueda convertir a texto, como un número entero o real, un booleano. Si no se indica parámetro, se avanzará de línea sin escribir nada: Console.WriteLine();
+
+Puede cambiar el terminador de línea configurando la propiedad TextWriter.NewLine de la propiedad Out en otra cadena.

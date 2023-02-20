@@ -1,0 +1,14 @@
+.Declaración de clases
+.Lenguaje: C#
+.Las clases se declaran utilizando la classpalabra clave seguida de un identificador único.
+
+//[access modifier] - [class] - [identifier]
+public class Customer
+{
+   // Campo, propiedades, metodos y eventos van aca...
+}
+
+
+La class palabra clave está precedida por el nivel de acceso. Debido a que public se usa en este caso, cualquiera puede crear instancias de esta clase. El nombre de la clase sigue a la classpalabra clave. El nombre de la clase debe ser un nombre de identificador de C# válido . El resto de la definición es el cuerpo de la clase, donde se definen el comportamiento y los datos. Los campos, las propiedades, los métodos y los eventos de una clase se denominan colectivamente miembros de la clase .
+
+

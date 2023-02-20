@@ -1,0 +1,84 @@
+.C# Properties (Get and Set)
+.Lenguaje: C#
+.Una propiedad es como una combinación de una variable y un método, y tiene dos métodos: un get y un set método:
+
+Antes de comenzar a explicar las propiedades, debe tener una comprensión básica de " Encapsulación ".
+
+El significado de Encapsulación es asegurarse de que los datos "sensibles" estén ocultos para los usuarios. Para lograr esto, debes:
+
+declarar campos/variables comoprivate
+proporcionar public get y setmétodos, a través de propiedades , para acceder y actualizar el valor de un private campo.
+
+privatesolo se puede acceder a las variables dentro de la misma clase (una clase externa no tiene acceso a ellas). Sin embargo, a veces necesitamos acceder a ellos, y se puede hacer con propiedades.
+
+Una propiedad es como una combinación de una variable y un método, y tiene dos métodos: un gety un setmétodo:
+
+class Person
+{
+  private string name; // field
+
+  public string Name   // property
+  {
+    get { return name; }   // get method
+    set { name = value; }  // set method
+  }
+}
+
+Ejemplo explicado
+La Namepropiedad está asociada con el namecampo. Es una buena práctica usar el mismo nombre tanto para la propiedad como para el campo privado, pero con la primera letra en mayúscula.
+
+El getmétodo devuelve el valor de la variable name.
+
+El setmétodo asigna valuea la namevariable. La valuepalabra clave representa el valor que asignamos a la propiedad.
+
+Ahora podemos usar la Namepropiedad para acceder y actualizar el privatecampo de la Personclase:
+
+class Person
+{
+  private string name; // field
+  public string Name   // property
+  {
+    get { return name; }
+    set { name = value; }
+  }
+}
+
+class Program
+{
+  static void Main(string[] args)
+  {
+    Person myObj = new Person();
+    myObj.Name = "Liam";
+    Console.WriteLine(myObj.Name);
+  }
+}
+
+Automatic Properties (Short Hand)
+
+C# también proporciona una forma de usar propiedades abreviadas/automáticas, donde no tiene que definir el campo para la propiedad, y solo tiene que escribir get; y set;dentro de la propiedad.
+
+El siguiente ejemplo producirá el mismo resultado que el ejemplo anterior. La única diferencia es que hay menos código:
+
+class Person
+{
+  public string Name  // property
+  { get; set; }
+}
+
+class Program
+{
+  static void Main(string[] args)
+  {
+    Person myObj = new Person();
+    myObj.Name = "Liam";
+    Console.WriteLine(myObj.Name);
+  }
+}
+
+POR QUE ENCAPSULACION?
+
+.Mejor control de los miembros de la clase (reduzca la posibilidad de que usted (u otros) estropeen el código)
+.Los campos se pueden hacer de solo lectura (si solo usa el getmétodo) o de solo escritura (si solo usa el setmétodo)
+.Flexible: el programador puede cambiar una parte del código sin afectar otras partes
+.Mayor seguridad de los datos
+

@@ -1,0 +1,28 @@
+.Bucle a través de una matriz
+.Lenguaje: C#
+.Recorrer vector
+
+Puede recorrer los elementos de la matriz con el forbucle y usar la Length propiedad para especificar cuántas veces debe ejecutarse el bucle.
+
+El siguiente ejemplo genera todos los elementos en la matriz de automóviles :
+
+El bucle FOREACH
+También hay un foreachbucle, que se usa exclusivamente para recorrer elementos en una matriz :
+
+foreach (type variableName in arrayName) 
+{
+  // code block to be executed
+}
+
+El siguiente ejemplo genera todos los elementos en la matriz de autosforeach , usando un bucle:
+
+string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+foreach (string i in cars) 
+{
+  Console.WriteLine(i);
+}
+
+El ejemplo anterior se puede leer así: para cada string elemento (llamado i - como en index) en cars , imprime el valor de i .
+
+Si compara el for ciclo y el foreach ciclo, verá que el foreach método es más fácil de escribir, no requiere un contador (usando la Lengthpropiedad) y es más legible.
+

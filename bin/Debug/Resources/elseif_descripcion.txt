@@ -1,0 +1,14 @@
+.Instrucciones de selección
+.Lenguaje: C#
+.Selecciona una instrucción para ejecutarla en función del valor de una expresión booleana.
+
+Utilice la else if declaración para especificar una nueva condición si la primera condición es False.
+
+CONDICIONES
+
+Less than: a < b
+Less than or equal to: a <= b
+Greater than: a > b
+Greater than or equal to: a >= b
+Equal to a == b
+Not Equal to: a != b

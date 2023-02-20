@@ -1,0 +1,6 @@
+.(Método)
+.Lenguaje: C#
+.Escribe un texto en consola
+.Biblioteca: system
+
+Escribe un valor en consola. En general, podrá ser un texto, pero también un valor que se pueda convertir a texto, como un número entero o real, un booleano.

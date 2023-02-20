@@ -1,0 +1,12 @@
+.(Método)
+.Lenguaje: C#
+.convierte un tipo de dato a una cadena de caracteres
+.Biblioteca: system
+
+Convierte el valor que recibe en su equivalente representado en una cadena de texto. 
+
+int, double, boolean, long, byte, etc...
+
+Obviamente pierde sus propiedades anteriores por lo cual. 
+
+por ejemplo, no se podrian hacer sumas. 

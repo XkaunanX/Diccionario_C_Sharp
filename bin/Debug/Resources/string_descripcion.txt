@@ -1,0 +1,7 @@
+.Tipo de Dato
+.Lenguaje: C#
+.cadena de caracteres
+
+Una cadena es un objeto de tipo Cadena cuyo valor es texto. Internamente, el texto se almacena como una colección secuencial de solo lectura de objetos Char . No hay ningún carácter de terminación nula al final de una cadena de C#; por lo tanto, una cadena de C# puede contener cualquier número de caracteres nulos incrustados ('\0'). La propiedad Longitud de una cadena representa la cantidad de Charobjetos que contiene, no la cantidad de caracteres Unicode. Para acceder a los puntos de código Unicode individuales en una cadena, use el objeto StringInfo .
+
+En C#, la stringpalabra clave es un alias de String . Por lo tanto, Stringy stringson equivalentes, independientemente de que se recomiende usar el alias proporcionado string, ya que funciona incluso sin using System;. La Stringclase proporciona muchos métodos para crear, manipular y comparar cadenas de forma segura. Además, el lenguaje C# sobrecarga algunos operadores para simplificar las operaciones de cadenas comunes.

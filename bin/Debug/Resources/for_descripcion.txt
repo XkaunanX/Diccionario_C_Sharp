@@ -1,0 +1,13 @@
+.Bucle
+.Lenguaje: C#
+.repite las instruciones del cuerpo hasta que se cumpla una condicion
+
+La instrucción for ejecuta una instrucción o un bloque de instrucciones mientras una expresión booleana especificada se evalúa como true. En el ejemplo siguiente se muestra la instrucción for, que ejecuta su cuerpo mientras que un contador entero sea menor que tres:
+
+La sección inicializador, que se ejecuta solo una vez, antes de entrar en el bucle. Normalmente, se declara e inicializa una variable de bucle local en esa sección. No se puede acceder a la variable declarada desde fuera de la instrucción for.
+
+La sección condición que determina si se debe ejecutar la siguiente iteración del bucle. Si se evalúa como true o no está presente, se ejecuta la siguiente iteración; de lo contrario, se sale del bucle. La sección condición debe ser una expresión booleana.
+
+La sección iterador, que define lo que sucede después de cada iteración del cuerpo del bucle.
+
+El cuerpo del bucle, que es una instrucción o un bloque de instrucciones.

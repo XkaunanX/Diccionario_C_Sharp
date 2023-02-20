@@ -1,0 +1,9 @@
+.Bucle
+.Lenguaje: C#
+.Ejecuta una instrucción o un bloque de instrucciones mientras que una expresión booleana especificada se evalúa como true.
+
+La instrucción dowhile ejecuta una instrucción o un bloque de instrucciones mientras que una expresión booleana especificada se evalúa como true. un bucle do se ejecuta una o varias veces.
+
+La instrucción do ejecuta una instrucción o un bloque de instrucciones mientras que una expresión booleana especificada se evalúa como true. Como esa expresión se evalúa después de cada ejecución del bucle, un bucle do se ejecuta una o varias veces. Esto es diferente de un bucle while, que se ejecuta cero o varias veces.
+
+El bucle siempre se ejecutará al menos una vez, incluso si la condición es falsa, porque el bloque de código se ejecuta antes de que se pruebe la condición

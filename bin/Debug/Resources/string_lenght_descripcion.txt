@@ -1,0 +1,5 @@
+.String metodo
+.Lenguaje: C#
+.Devuelve el largo de una cadena segun la cantidad de caracteres
+
+Una cadena en C# es en realidad un objeto, que contiene propiedades y métodos que pueden realizar ciertas operaciones en cadenas. Por ejemplo, la longitud de una cadena se puede encontrar con la Length propiedad 

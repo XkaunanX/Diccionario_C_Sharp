@@ -1,0 +1,63 @@
+.Abstraccion en Clases y Metodos
+.Lenguaje: C#
+.La abstracción de datos es el proceso de ocultar ciertos detalles y mostrar solo la información esencial al usuario.
+La abstracción se puede lograr con clases abstractas o interfaces
+
+La abstractpalabra clave se utiliza para clases y métodos:
+
+Clase abstracta: es una clase restringida que no se puede usar para crear objetos (para acceder a ella, se debe heredar de otra clase).
+
+Método abstracto: solo se puede usar en una clase abstracta y no tiene cuerpo. El cuerpo lo proporciona la clase derivada (heredada de).
+Una clase abstracta puede tener métodos abstractos y regulares:
+
+abstract class Animal 
+{
+  public abstract void animalSound();
+  public void sleep() 
+  {
+    Console.WriteLine("Zzz");
+  }
+}
+
+Del ejemplo anterior, no es posible crear un objeto de la clase Animal:
+
+Animal myObj = new Animal(); // Will generate an error (Cannot create an instance of the abstract class or interface 'Animal')
+
+Recuerde del capítulo Herencia que usamos el :símbolo para heredar de una clase y que usamos la overridepalabra clave para anular el método de la clase base.
+
+// Abstract class
+abstract class Animal
+{
+  // Abstract method (does not have a body)
+  public abstract void animalSound();
+  // Regular method
+  public void sleep()
+  {
+    Console.WriteLine("Zzz");
+  }
+}
+
+// Derived class (inherit from Animal)
+class Pig : Animal
+{
+  public override void animalSound()
+  {
+    // The body of animalSound() is provided here
+    Console.WriteLine("The pig says: wee wee");
+  }
+}
+
+class Program
+{
+  static void Main(string[] args)
+  {
+    Pig myPig = new Pig(); // Create a Pig object
+    myPig.animalSound();  // Call the abstract method
+    myPig.sleep();  // Call the regular method
+  }
+}
+
+¿Por qué y cuándo usar clases y métodos abstractos?
+Para lograr la seguridad, oculte ciertos detalles y solo muestre los detalles importantes de un objeto.
+
+Nota: La abstracción también se puede lograr con Interfaces.

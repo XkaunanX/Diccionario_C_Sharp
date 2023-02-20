@@ -1,0 +1,27 @@
+.Tipo de Dato
+.Lenguaje: C#
+.números reales
+
+Los tipos numéricos de punto flotante representan números reales. Todos los tipos numéricos de coma flotante son tipos de valor . También son tipos simples y se pueden inicializar con literales . Todos los tipos numéricos de punto flotante admiten operadores aritméticos , de comparación y de igualdad.
+
+El valor predeterminado de cada tipo de punto flotante es cero, 0. Cada uno de los tipos de punto flotante tiene las constantes MinValuey MaxValueque proporcionan el valor finito mínimo y máximo de ese tipo. Los tipos floaty doubletambién proporcionan constantes que representan valores no numéricos e infinitos. Por ejemplo, el doubletipo proporciona las siguientes constantes: Double.NaN , Double.NegativeInfinity y Double.PositiveInfinity.
+
+El decimaltipo es apropiado cuando el grado de precisión requerido está determinado por el número de dígitos a la derecha del punto decimal. Dichos números se usan comúnmente en aplicaciones financieras, para montos de divisas (por ejemplo, $1,00), tasas de interés (por ejemplo, 2,625%), etc. Incluso los números que tienen una precisión de solo un dígito decimal se manejan con mayor precisión por el decimaltipo: 0.1, por ejemplo, se puede representar exactamente con una decimalinstancia, mientras que no hay una doubleinstancia floatque represente exactamente 0.1. Debido a esta diferencia en los tipos numéricos, pueden producirse errores de redondeo inesperados en los cálculos aritméticos cuando utiliza doubleo floatpara datos decimales. Puedes usar doubleen lugar dedecimalcuando optimizar el rendimiento es más importante que garantizar la precisión. Sin embargo, cualquier diferencia en el rendimiento pasaría desapercibida para todas las aplicaciones, excepto para las más intensivas en cálculo. Otra posible razón para evitar decimales minimizar los requisitos de almacenamiento. Por ejemplo, ML.NET lo usa floatporque la diferencia entre 4 bytes y 16 bytes se suma para conjuntos de datos muy grandes. Para obtener más información, consulte System.Decimal .
+
+Puede mezclar tipos integrales y los tipos floaty doubleen una expresión. En este caso, los tipos integrales se convierten implícitamente a uno de los tipos de coma flotante y, si es necesario, el floattipo se convierte implícitamente a double. La expresión se evalúa de la siguiente manera:
+
+Si hay doubletipo en la expresión, la expresión se evalúa como double, o como boolen comparaciones relacionales y de igualdad.
+Si no hay ningún doubletipo en la expresión, la expresión se evalúa como float, o como boolen comparaciones relacionales y de igualdad.
+También puede mezclar tipos integrales y el decimaltipo en una expresión. En este caso, los tipos integrales se convierten implícitamente al decimaltipo y la expresión se evalúa como decimal, o como boolen comparaciones relacionales y de igualdad.
+
+No puede mezclar el decimaltipo con los tipos float y double en una expresión. En este caso, si desea realizar operaciones aritméticas, de comparación o de igualdad, debe convertir explícitamente los operandos desde o hacia el decimaltipo.
+
+Puede usar cadenas de formato numérico estándar o cadenas de formato numérico personalizado para dar formato a un valor de coma flotante.
+
+El tipo de un literal real está determinado por su sufijo de la siguiente manera:
+
+El literal sin sufijo o con el sufijo "d" o "D" es del tipo double
+El literal con el sufijo "f" o "F" es de tipo F float
+El literal con el sufijo "m" o "M" es de tipo M decimal
+
+Solo hay una conversión implícita entre los tipos numéricos de coma flotante: de floata double. Sin embargo, puede convertir cualquier tipo de punto flotante en cualquier otro tipo de punto flotante con la conversión explícita.
